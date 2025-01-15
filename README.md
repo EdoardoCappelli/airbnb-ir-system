@@ -18,19 +18,11 @@ The dataset used for this project is sourced from [Kaggle](https://www.kaggle.co
 - **bathrooms_text**: Description of bathrooms (e.g., "1 bath").
 - **number_of_reviews**: Number of reviews the property has received.
 - **review_scores_rating**: Average rating score of the property.
-- **latitude**: Latitude coordinate of the property.
-- **longitude**: Longitude coordinate of the property.
-
+ 
 You can download the dataset directly from the link above and save it in the `data/` directory.
 
-## Prerequisites
-Ensure you have the following packages installed:
-```bash
-pip install pandas numpy torch sentence-transformers scikit-learn
-```
-
-Make sure you have **CUDA** installed if you plan to run the model on a GPU for faster performance.
-
+ 
+  
 ## Project Structure
 ```
 project/
@@ -67,32 +59,47 @@ python main.py
 
 You will be prompted to enter a query. For example:
 ```
-What kind of apartment are you looking for?
-> 1 bathroom, $50 max per night, at least 100 reviews, at least 4.5 rating
+Enter the number of bedrooms: 2
+Enter the number of bathrooms:
+Enter the price of the apartment: 50
+Enter the number of reviews:
+Enter the average rating:
 ```
 
 ### Sample Output
 ```
------------------- TOP SOLUTIONS FOUND -----------------
-ID: 12345
-Url: https://example.com/listing/12345
-Beds: 2
-Price: 45.0
-Bathrooms: 1 bath
-Rating: 4.8
-Number of reviews: 150
-Similarity Score: 0.923
---------------------------------------------------------
-ID: 67890
-Url: https://example.com/listing/67890
-Beds: 1
+------------------ TOP 3 SOLUTIONS FOUND -----------------
+ID: 24011469
+Url: https://www.airbnb.com/rooms/24011469
+Beds: 2.0
+Beds: 2.0
 Price: 50.0
-Bathrooms: 1 bath
-Rating: 4.7
-Number of reviews: 200
-Similarity Score: 0.910
+Price: 50.0
+Bathrooms: 1.5 baths
+Rating: 4.84
+Bathrooms: 1.5 baths
+Rating: 4.84
+Number of reviews: 51
+Similarity Score: 0.859
 --------------------------------------------------------
-...
+ID: 20292780
+Url: https://www.airbnb.com/rooms/20292780
+Beds: 2.0
+Price: 50.0
+Bathrooms: 1.5 baths
+Rating: 4.75
+Number of reviews: 36
+Similarity Score: 0.852
+--------------------------------------------------------
+ID: 52270967
+Url: https://www.airbnb.com/rooms/52270967
+Beds: 2.0
+Price: 50.0
+Bathrooms: 1.5 baths
+Rating: 4.9
+Number of reviews: 21
+Similarity Score: 0.848
+--------------------------------------------------------
 ```
 
 ## Future Improvements
