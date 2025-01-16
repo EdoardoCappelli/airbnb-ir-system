@@ -101,6 +101,20 @@ Number of reviews: 21
 Similarity Score: 0.848
 --------------------------------------------------------
 ```
+## Training
+### Data Generation:
+Randomly generate examples of apartment listings with various attributes (e.g., number of bedrooms, bathrooms, price, reviews, and rating).
+
+For each generated listing, create:
+
+* Anchor: A partial query that includes some of the listing attributes.
+* Positive: A full listing with all attributes matching the anchor.
+* Negative: A listing with at least one attribute different from the anchor.
+
+The generated data is stored as triplet examples: (Anchor, Positive, Negative).
+
+### Triplet Loss Function
+I used the Triplet Loss objective, which encourages the model to embed the anchor closer to the positive example than to the negative example. The model is trained for 10 epochs, with a warmup step to gradually adjust the learning rate
 
 ## Future Improvements
 This project was primarily developed with an educational intent, to understand how Information Retrieval systems based on embeddings and text similarity work. **The goal was not to create a fully usable product**, but rather to explore techniques in natural language processing and search capabilities using pre-trained models.
