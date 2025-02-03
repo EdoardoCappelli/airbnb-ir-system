@@ -28,7 +28,7 @@ def generate_partial_query(beds, baths, price, reviews, rating):
     
     return ", ".join(components)
 
-# Generazione di 100 esempi
+# Generazione esempi
 train_examples = []
 
 for _ in range(10000):
@@ -105,8 +105,8 @@ train_loss = losses.TripletLoss(model=model)
 # Training
 model.fit(
     train_objectives=[(train_dataloader, train_loss)],
-    epochs=10,
-    warmup_steps=100,
+    epochs=50,
+    warmup_steps=10,
     show_progress_bar=True
 )
 
