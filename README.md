@@ -39,6 +39,11 @@ project/
 This script contains the `SimpleRealEstateIR` class, which handles:
 - **Data Preprocessing**: Cleans the dataset, particularly the `price` column.
 - **Creating Embeddings**: Uses the **all-MiniLM-L6-v2** model to generate embeddings for property descriptions.
+  
+```bash
+# Example of a property description
+"2 bedrooms, 2 bathrooms, $50, 300 reviews, 4.5 rating"
+```
 - **Search Functionality**: Computes cosine similarity between the query embedding and the embeddings of all listings to return the top matches.
 
 ### 2. `main.py`
